@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-white antialiased selection:bg-secondary selection:text-black;
+  }
+
+  /* Deep Dark Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full hover:bg-secondary transition-colors;
+  }
+}
+
+@layer components {
+
+  /* Buttons */
+  .btn {
+    @apply px-5 py-2.5 rounded-lg font-bold tracking-wide transition-all duration-200 active:scale-95 flex items-center justify-center gap-2;
+  }
+
+  .btn-primary {
+    @apply bg-secondary text-black hover:bg-orange-400 shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply bg-slate-800 text-white hover:bg-slate-700 border border-slate-700;
+  }
+
+  .btn-outline {
+    @apply border border-slate-700 text-slate-300 hover:border-secondary hover:text-secondary hover:bg-secondary/10;
+  }
+
+  /* Cards & Inputs */
+  .card {
+    @apply bg-surface rounded-xl border border-slate-800/50 hover:border-secondary/50 transition-all duration-300;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.16);
+  }
+
+  .card:hover {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+  }
+
+  .input,
+  select {
+    @apply w-full px-4 py-3 rounded-lg border border-slate-700 bg-surface text-white focus:outline-none focus:ring-1 focus:ring-secondary focus:border-secondary transition-all placeholder:text-slate-500;
+  }
+
+  option {
+    @apply bg-background text-white;
+  }
+
+  .glass-panel {
+    @apply bg-surface/90 backdrop-blur-md border border-slate-700;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  }
+}
